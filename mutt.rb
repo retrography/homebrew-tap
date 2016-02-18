@@ -73,8 +73,8 @@ class Mutt < Formula
   end if build.with? "trash-patch"
 
   patch do
-    url "https://raw.github.com/nedos/mutt-sidebar-patch/7ba0d8db829fe54c4940a7471ac2ebc2283ecb15/mutt-sidebar.patch"
-    sha1 "1e151d4ff3ce83d635cf794acf0c781e1b748ff1"
+    url "http://lunar-linux.org/~tchan/mutt/patch-1.5.24.sidebar.20151111.txt"
+    sha1 "efa3b6efd7bdb7053314d75b8188ac46c22ecdc5"
   end if build.with? "sidebar-patch"
 
   def install
