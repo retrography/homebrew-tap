@@ -5,13 +5,6 @@ class Mutt < Formula
   mirror "ftp://ftp.mutt.org/pub/mutt/mutt-1.5.24.tar.gz"
   sha256 "a292ca765ed7b19db4ac495938a3ef808a16193b7d623d65562bb8feb2b42200"
 
-  bottle do
-    revision 2
-    sha256 "5bb0c9590b522bbcc38bfecaf0561810db2660792f472aa12a3b6c8f5e5b28d7" => :el_capitan
-    sha256 "8cad91b87b615984871b6bed35a029edcef006666bc7cf3b8f6b8b74d91c5b97" => :yosemite
-    sha256 "c57d868588eb947002902c90ee68af78298cbb09987e0150c1eea73f9e574cce" => :mavericks
-  end
-
   head do
     url 'http://dev.mutt.org/hg/mutt#default', :using => :hg
 
