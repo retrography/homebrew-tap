@@ -69,7 +69,7 @@ class Mutt < Formula
   
   patch do
     url "https://blog.x-way.org/stuff/mutt-1.5.24-trash_folder.diff"
-    sha1 "985d7f6ae17e15e525b19e348b3a43e78177cea3b775434abcbe7d220bebe934"
+    sha1 "325c864b687876d50bc04369668544814552fbd0"
   end if build.with? "trash-patch"
 
   patch do
