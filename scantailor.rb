@@ -1,28 +1,19 @@
 require 'formula'
 
 class Scantailor < Formula
-  homepage 'http://scantailor.sourceforge.net/'
+  homepage 'http://github.com/scantailor/scantailor'
+  head 'https://github.com/couchbase/geocouch.git'
+  url 'https://github.com/scantailor/scantailor/archive/RELEASE_0_9_12_1.tar.gz'
+  sha256 'ef5d5bdca207ab00701121a32e9b95c7c7353c642b9538b3f9ca040d8d1a5dde'
 
-  unless ARGV.include? '--enhanced'
-    url 'http://downloads.sourceforge.net/project/scantailor/scantailor/0.9.10/scantailor-0.9.10.tar.gz'
-    md5 'f962c93a2d63b449fa3f6612ade3b028'
-  else
-    url 'http://downloads.sourceforge.net/project/scantailor/scantailor-devel/enhanced/scantailor-enhanced-20110907.tar.gz'
-    md5 '8ba5c23c611e7bdd7cdb40f991f6fd35'
-    version 'enhanced-20110907'
-  end
 
   depends_on 'cmake' => :build
-  depends_on 'qt'
+  depends_on 'cartr/qt4/qt@4'
   depends_on 'boost'
   depends_on 'jpeg'
   depends_on 'libtiff'
-
-  def options
-    [
-      ["--enhanced", "Build experimental \"enhanced\" branch, which includes extra features"]
-    ]
-  end
+  depends_on 'libpng'
+  depends_on 'zlib'
 
   def install
     system "cmake . #{std_cmake_parameters} -DPNG_INCLUDE_DIR=/usr/X11/include"
