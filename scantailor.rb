@@ -28,8 +28,14 @@ class Scantailor < Formula
     resources = "#{appcon}/Resources"
     frameworks = "#{appcon}/Frameworks"
     
+    repstring = <<-HEREDOC
+<string>10.12.0</string>
+	<key>NSHighResolutionCapable</key>
+	<string>True</string>
+    HEREDOC
     
     inreplace "#{pack}/Info.plist.in", "@VERSION@", version
+    inreplace "#{pack}/Info.plist.in", "<string>10.4.0</string>\n", repstring
     mv "#{pack}/Info.plist.in", "#{pack}/Info.plist"
     (buildpath/macos).mkpath
     (buildpath/resources).mkpath
