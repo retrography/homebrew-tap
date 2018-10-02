@@ -17,8 +17,8 @@ class Scantailor < Formula
   depends_on 'zlib'
 
   def install
-    system "cmake . #{std_cmake_parameters} -DPNG_INCLUDE_DIR=/usr/X11/include"
-    system "make install"
+    system "cmake", ".", *std_cmake_args, "-DPNG_INCLUDE_DIR=/usr/X11/include"
+    system "make", "install"
 
     # Create app bundle
     pack = "packaging/osx"
@@ -29,7 +29,7 @@ class Scantailor < Formula
     frameworks = "#{appcon}/Frameworks"
     
     repstring = <<-HEREDOC
-<string>10.12.0</string>
+<string>10.14.0</string>
 	<key>NSHighResolutionCapable</key>
 	<string>True</string>
     HEREDOC
