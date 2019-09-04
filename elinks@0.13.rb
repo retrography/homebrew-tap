@@ -13,8 +13,8 @@ class ElinksAT013 < Formula
     depends_on "libtool" => :build
   end
 
-  depends_on "gnutls"
-  depends_on "spidermonkey"
+  depends_on "openssl"
+  depends_on "tre"
   depends_on :x11
 
   def install
@@ -22,7 +22,8 @@ class ElinksAT013 < Formula
     ENV.delete("LD")
     system "./autogen.sh" if build.head?
     system "./configure", "--prefix=#{prefix}", "--without-lua",
-                          "--enable-256-colors"
+                          "--enable-256-colors", "--enable-true-color",
+                          "--enable-fastmem"
     system "make", "install"
   end
 
