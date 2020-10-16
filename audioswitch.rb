@@ -5,7 +5,7 @@ class Audioswitch < Formula
   sha256 "314c12bbb264c3b86d3efb4f66e77486ea8b64b8f44f94913b6799dd36b5becb"
   head "https://github.com/retrography/audioswitch.git"
 
-  depends_on :macos => :lion
+  depends_on :macos => :sierra
   depends_on "cmake" => :build
 
   def install

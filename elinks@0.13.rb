@@ -13,7 +13,11 @@ class ElinksAT013 < Formula
     depends_on "libtool" => :build
   end
 
+<<<<<<< Updated upstream
   depends_on "openssl"
+=======
+  depends_on "gnutls"
+>>>>>>> Stashed changes
   depends_on "tre"
   depends_on :x11
 
@@ -23,6 +27,10 @@ class ElinksAT013 < Formula
     system "./autogen.sh" if build.head?
     system "./configure", "--prefix=#{prefix}", "--without-lua",
                           "--enable-256-colors", "--enable-true-color",
+<<<<<<< Updated upstream
+=======
+                          "--enable-uri-rewrite", "--with-guntls",
+>>>>>>> Stashed changes
                           "--enable-fastmem"
     system "make", "install"
   end

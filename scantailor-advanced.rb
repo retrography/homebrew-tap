@@ -20,6 +20,10 @@ class ScantailorAdvanced < Formula
     system "cmake", ".", *std_cmake_args, "-DPNG_INCLUDE_DIR=/usr/X11/include", "-DCMAKE_PREFIX_PATH=$(brew --prefix qt5)"
     system "make", "install"
     
+    # ICON
+    #qlmanage -t -s 512 -o . appicon.svg
+    #sips -s format icns appicon.svg.png --out appicon.icns
+    
     # Create app bundle
     # pack = "packaging/osx"
     # app = "app/ScanTailor.app"
